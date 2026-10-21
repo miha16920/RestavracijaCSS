@@ -4,17 +4,21 @@
     <meta charset="UTF-8">                                                      <!--Branje šumnikov-->
     <title>Meni | Restavracija Kramberger</title>      
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">     <!--Prikaz na telefonu-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">     <!--Hitrejše nalaganje Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="css/style.css">    <!--Vključitev stilske datoteke-->
 </head>
 <body>
 
     <header>    
-        <a href="index.html">
-            <img src="Slike/logo.png" alt="Logo Restavracije Kramberger" height="150" width="200"></a>
+        <a  class="logo" href="index.html">
+            <img src="Slike/logo.png" alt="Logo Restavracije Kramberger" height="150" width="225"></a>
             <h1><a href="index.html">Restavracija Kramberger</a></h1>
             <nav>       <!--Navigacija (v bistvu je podobno kot unordered list)-->
                 <ul>
                     <li><a href="index.html">Domov</a></li>
-                    <li><a href="meni.html">Meni</a></li>
+                    <li><a href="meni.html" class="aktivno" aria-current="page">Meni</a></li>
                     <li><a href="recepti.html">Recepti</a></li>
                     <li><a href="rezervacija.html">Rezervacija</a></li>
                     <li><a href="o-nas.html">O nas</a></li>
@@ -27,7 +31,7 @@
         <section>
             <h2>Predjedi</h2>
             
-            <table> <caption>Naše predjedi</caption>
+             <div class="tabela-ovoj"></div><table class="tabela tabela-meni"> <caption>Naše predjedi</caption>
                 <thead> <!--Glava tabele-->
                 <tr>
                     <th>Hrana</th>  <!--<th> naslov stolpca-->
@@ -46,7 +50,7 @@
                 <tr>
                     <td>Široki rezanci z jurčki</td>
                     <td>Domače testenine v kremni smetanovi omaki s svežimi jurčki</td>
-                    <td>gluten, jajca, laktoza in listna zelena/td>
+                    <td>gluten, jajca, laktoza in listna zelena</td>
                     <td>8.90 €</td>
                 </tr>
                 <tr>
@@ -62,13 +66,13 @@
                     <td>4.80 €</td>
                 </tr>
                 </tbody>
-            </table>
+            </table></div>
         </section>
 
         <section>
-            <h3>Glavne jedi</h3>
+            <h2>Glavne jedi</h2>
             
-            <table><caption>Naše glavne jedi</caption>
+            <div class="tabela-ovoj"><table class="tabela tabela-meni"><caption>Naše glavne jedi</caption>
                 <thead>
                 <tr>
                     <th>Hrana</th>
@@ -103,13 +107,13 @@
                     <td>32.00 €</td>
                 </tr>
                 </tbody>
-            </table>
+            </table></div>
         </section>
 
         <section>
             <h4>Sladice</h4>
             
-            <table><caption>Naše sladice</caption>
+            <div class="tabela-ovoj"><table class="tabela tabela-meni"><caption>Naše sladice</caption>
                 <thead>
                 <tr>
                     <th>Hrana</th>
@@ -144,7 +148,7 @@
                     <td>4.20 €</td>
                 </tr>
                 </tbody>
-            </table>
+            </table></div>
             <br>    <!--Presledek da je bolj ločeno od zgornje tabele-->
         </section>
 
