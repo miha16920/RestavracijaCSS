@@ -1,0 +1,71 @@
+
+/* Barve */
+:root {
+    
+    --barva-primarna: #7a2e2e;
+    --barva-primarna-temna: #5a2020;
+    --barva-poudarek: #c8963e;
+    --barva-poudarek-svetla: #e6bd74;
+    --barva-ozadje: #faf5ec;
+    --barva-besedilo: #2e2420;
+
+    --barva-svetlo: #ffffff;
+    --barva-kartica: #ffffff;
+    --barva-glava: #fffaf2;
+    --barva-noga: #2a1b18;
+    --barva-noga-besedilo: #f3e9d8;
+    --barva-obroba: #e3d5bd;
+    --barva-medlo: #6f625a;
+    --barva-vrstica: #f4ece0;
+    --barva-hover: #f6e3bd;
+    --barva-zaprto: #a12a2a;
+    --barva-zaprto-ozadje: #f8e0dc;
+    --barva-prekrivanje: rgba(30, 15, 10, 0.55);
+    --barva-fokus: rgba(200, 150, 62, 0.35);
+
+    /* sence */
+    --senca: 0 2px 10px rgba(46, 36, 32, 0.18);
+    --senca-besedila: 0 2px 6px rgba(0, 0, 0, 0.7);
+
+    /* pisave in mere */
+    --pisava-naslovi: "Playfair Display", Georgia, serif;
+    --pisava-besedilo: "Source Sans 3", Arial, sans-serif;
+    --polmer: 0.75rem;
+    --polmer-gumb: 62.5rem;
+}
+
+/* vsem elementom in tudi njihovim navideznim elementom nastavi border-box */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;   /* sticky glava ne prekrije cilja sidra */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--pisava-besedilo);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--barva-besedilo);
+    background-color: var(--barva-ozadje);
+}
+
+a {
+    color: var(--barva-primarna);
+}
+
+a:hover {
+    color: var(--barva-primarna-temna);
+}
+
+img {
+    max-width: 100%;
+}
