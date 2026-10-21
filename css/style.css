@@ -577,3 +577,46 @@ textarea.polje {
     text-align: right;
     font-weight: 700;
 }
+/* o-nas.html */
+.zgodba {
+    display: grid;              /* zgodba in slika drugo ob drugi */
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+    gap: 2rem;
+}
+
+.zgodba-besedilo p:first-child {
+    margin-top: 0;
+}
+
+.zgodba figure {
+    margin: 0;
+    padding: 0.75rem;
+    border-radius: var(--polmer);
+    background-color: var(--barva-kartica);
+    box-shadow: var(--senca);
+}
+
+.zgodba img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.zgodba figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--barva-medlo);
+}
+
+.zemljevid {
+    display: block;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 0.75rem;
+    border: 0;
+    border-radius: var(--polmer);
+    box-shadow: var(--senca);
+}
