@@ -397,3 +397,86 @@ footer p {
 .tabela tbody tr.zaprto th {
     border-left: 4px solid var(--barva-zaprto);
 }
+/* rezervacija.html */
+.obrazec fieldset {
+    margin: 2rem 0 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--barva-obroba);
+    border-top: 3px solid var(--barva-primarna);
+    border-radius: var(--polmer);
+    background-color: var(--barva-kartica);
+    box-shadow: var(--senca);
+}
+
+.obrazec legend {
+    padding: 0.3rem 1.1rem;
+    border-radius: var(--polmer-gumb);
+    font-family: var(--pisava-naslovi);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--barva-svetlo);
+    background-color: var(--barva-primarna);
+}
+
+/* oznake v enem stolpcu, polja v drugem */
+.vrstica {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    margin-top: 1rem;
+}
+
+.obrazec label,
+.oznaka {
+    font-weight: 600;
+}
+
+.polje {
+    width: 100%;
+    max-width: 32rem;
+    padding: 0.6rem 0.8rem;
+    border: 2px solid var(--barva-obroba);
+    border-radius: 0.5rem;
+    font: inherit;
+    color: var(--barva-besedilo);
+    background-color: var(--barva-kartica);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.polje:focus {
+    outline: none;
+    border-color: var(--barva-primarna);    /* obroba spremeni barvo ob vpisovanju */
+    box-shadow: 0 0 0 3px var(--barva-fokus);
+}
+
+textarea.polje {
+    max-width: none;
+    resize: vertical;
+}
+
+.moznosti {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+}
+
+.moznost label {
+    font-weight: 400;
+}
+
+.soglasje {
+    grid-column: 2;
+}
+
+.obrazec input[type="radio"],
+.obrazec input[type="checkbox"] {
+    margin-right: 0.35rem;
+}
+
+.gumbi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 1rem;
+}
