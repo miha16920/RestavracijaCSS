@@ -191,3 +191,106 @@ footer p {
     margin: 0;
     font-size: 0.9rem;
 }
+
+/* index.html */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 3rem 1.5rem;
+    border-radius: var(--polmer);
+    text-align: center;
+    color: var(--barva-svetlo);
+    /* temen preliv čez sliko, da je besedilo berljivo */
+    background-image: linear-gradient(var(--barva-prekrivanje), var(--barva-prekrivanje)), url("../Slike/stavba.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero h1 {
+    max-width: 40rem;
+    color: var(--barva-svetlo);
+    font-size: 2.75rem;
+    text-shadow: var(--senca-besedila);
+}
+
+.hero p {
+    max-width: 42rem;
+    margin: 0 0 1.5rem;
+    font-size: 1.2rem;
+    text-shadow: var(--senca-besedila);
+}
+
+.hero .gumb {
+    border-color: var(--barva-poudarek);
+    color: var(--barva-besedilo);
+    background-color: var(--barva-poudarek);
+    text-shadow: none;
+}
+
+.hero .gumb:hover {
+    border-color: var(--barva-poudarek-svetla);
+    color: var(--barva-besedilo);
+    background-color: var(--barva-poudarek-svetla);
+}
+
+.kartice {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* tri kartice v vrsti, enaka višina */
+    gap: 1.5rem;
+}
+
+.kartica {
+    position: relative;     /* za pozicioniranje značke */
+    padding: 1rem;
+    border-radius: var(--polmer);
+    background-color: var(--barva-kartica);
+    box-shadow: var(--senca);
+}
+
+.kartica figure {
+    margin: 0 0 0.75rem;
+}
+
+.kartica img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    border-radius: 0.5rem;
+    object-fit: cover;      /* obreže sliko, razmerje stranic ostane pravilno */
+}
+
+.kartica figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--barva-medlo);
+}
+
+.kartica h3 {
+    margin: 0 0 0.25rem;
+    font-family: var(--pisava-naslovi);
+    font-size: 1.35rem;
+    color: var(--barva-primarna);
+}
+
+.kartica p {
+    margin: 0;
+}
+
+.znacka {
+    position: absolute;     /* zgornji desni kot kartice, čez sliko */
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 0.2rem 0.75rem;
+    border-radius: var(--polmer-gumb);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--barva-besedilo);
+    background-color: var(--barva-poudarek);
+}
