@@ -69,3 +69,61 @@ a:hover {
 img {
     max-width: 100%;
 }
+/* Glava (vedno vidna na vrhu) */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;     /* logotip levo, navigacija desno */
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
+    background-color: var(--barva-glava);
+    border-bottom: 3px solid var(--barva-poudarek);
+    box-shadow: var(--senca);
+}
+
+.logo {
+    display: block;
+    line-height: 0;
+}
+
+.logo img {
+    display: block;
+    width: auto;
+    height: 4.5rem;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: var(--polmer-gumb);
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--barva-besedilo);
+    transition: background-color 0.2s;
+}
+
+header nav a:hover {
+    background-color: var(--barva-hover);
+}
+
+header nav a.aktivno {
+    background-color: var(--barva-primarna);
+    color: var(--barva-svetlo);
+}
+
+header nav a.aktivno:hover {
+    background-color: var(--barva-primarna-temna);
+}
