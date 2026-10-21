@@ -127,3 +127,67 @@ header nav a.aktivno {
 header nav a.aktivno:hover {
     background-color: var(--barva-primarna-temna);
 }
+/* Gumbi (povezava in gumbi v obrazcu) */
+.gumb {
+    display: inline-block;
+    padding: 0.7rem 1.6rem;
+    border: 2px solid var(--barva-primarna);
+    border-radius: var(--polmer-gumb);
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--barva-svetlo);
+    background-color: var(--barva-primarna);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.gumb:hover {
+    border-color: var(--barva-primarna-temna);
+    color: var(--barva-svetlo);
+    background-color: var(--barva-primarna-temna);
+}
+
+.gumb-sekundarni {
+    border-color: var(--barva-obroba);
+    color: var(--barva-medlo);
+    background-color: var(--barva-ozadje);
+    font-weight: 600;
+}
+
+.gumb-sekundarni:hover {
+    border-color: var(--barva-poudarek);
+    color: var(--barva-besedilo);
+    background-color: var(--barva-hover);
+}
+
+/* Noga */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 4px solid var(--barva-poudarek);
+    color: var(--barva-noga-besedilo);
+    background-color: var(--barva-noga);
+}
+
+footer address {
+    font-style: normal;
+    line-height: 1.8;
+}
+
+footer a {
+    color: var(--barva-poudarek-svetla);
+}
+
+footer a:hover {
+    color: var(--barva-svetlo);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
