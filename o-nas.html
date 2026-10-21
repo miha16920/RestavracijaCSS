@@ -2,96 +2,92 @@
 <html lang="sl">
 <head>
     <meta charset="UTF-8">                                                      <!--Branje šumnikov-->
-    <title>Meni | Restavracija Kramberger</title>      
+    <title>O nas | Restavracija Kramberger</title>      
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">     <!--Prikaz na telefonu-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">     <!--Hitrejše nalaganje Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="css/style.css">    <!--Vključitev stilske datoteke-->
 </head>
 <body>
 
     <header>    
-        <a href="index.html">
-            <img src="Slike/logo.png" alt="Logo Restavracije Kramberger" height="150" width="200"></a>
-            <h1><a href="index.html">Restavracija Kramberger</a></h1>
+        <a class="logo" href="index.html">
+            <img src="Slike/logo.png" alt="Logo Restavracije Kramberger" height="150" width="225"></a>
             <nav>       <!--Navigacija (v bistvu je podobno kot unordered list)-->
                 <ul>
                     <li><a href="index.html">Domov</a></li>
                     <li><a href="meni.html">Meni</a></li>
                     <li><a href="recepti.html">Recepti</a></li>
                     <li><a href="rezervacija.html">Rezervacija</a></li>
-                    <li><a href="o-nas.html">O nas</a></li>
+                    <li><a href="o-nas.html" class="aktivno" aria-current="page">O nas</a></li>
                 </ul>
             </nav>
     </header>
 
-    <main> 
+    <main>
         <h1>O nas</h1>
         <section> 
             <h2>Naša zgodba</h2>
-            <p>
-                Zgodba Gostilne Kramberger je zgodba o družini, ljubezni do slovenske zemlje in globokem spoštovanju tradicije, 
-                ki jo uspešno pišemo že od leta 1991. Vse se je začelo s preprosto, a močno vizijo, ustvariti prostor, kjer se 
-                vrhunska domača kulinarika sreča s pristno štajersko gostoljubnostjo in kjer se vsak gost počuti dobrodošlo. <br><br> 
-                Naša kuhinja vseskozi trdno stoji na temeljih receptov naših babic, saj verjamemo, da prava kulinarična dediščina ne 
-                potrebuje bližnjic. Iz tega razloga še danes sami kuhamo prave jušne osnove, pečemo hrustljave pečenke v lastnem soku 
-                ter ročno pripravljamo domače ajdove žgance in štruklje. Močno smo povezani z okoliškimi kmetijami in lokalnimi 
-                pridelovalci, saj se zavedamo, da se le iz najboljših domačih sestavin lahko rodi pristen, poln okus. <br><br> 
-                Čeprav ponosno ohranjamo kmečke klasike, kot so krvavice z ajdovo kašo, kmečki krožniki in domača gibanica, naš 
-                jedilnik vedno ponuja nekaj za vsakogar. Gostom so tako na voljo tudi sočni zrezki v bogatih omakah, sveže ribe 
-                ter pestre pizze. Kramberger namreč ni le prostor za kosilo ali večerjo, temveč je prostor, kjer se ob praznovanjih 
-                zbere celotna družina, kjer se ob zvokih nazdravljanja kujejo nepozabni spomini in kjer vsak obiskovalec postane del 
-                naše zgodbe. Hvala vam, da ste že več kot tri desetletja z nami, saj vas pri nas vedno čakata dišeča domača hrana in 
-                topel nasmeh.<br><br> 
-            </p>
-            <article>
-                <figure>    
-                    <img src="Slike/stavba.jpg" alt="Slika restavracije Kramberger">       
-                    <figcaption>Stavba v kateri se odvija naša zgodba</figcaption>     <!--Opis slike-->
-                </figure>
-            </article>
+            <div class="zgodba">    <!--Zgodba in slika drugo ob drugi-->
+                <div class="zgodba-besedilo">
+                    <p>Zgodba Gostilne Kramberger je zgodba o družini, ljubezni do slovenske zemlje in globokem spoštovanju tradicije, ki jo uspešno pišemo že od leta 1991. Vse se je začelo s preprosto, a močno vizijo, ustvariti prostor, kjer se vrhunska domača kulinarika sreča s pristno štajersko gostoljubnostjo in kjer se vsak gost počuti dobrodošlo.</p>
+                    <p>Naša kuhinja vseskozi trdno stoji na temeljih receptov naših babic, saj verjamemo, da prava kulinarična dediščina ne potrebuje bližnjic. Iz tega razloga še danes sami kuhamo prave jušne osnove, pečemo hrustljave pečenke v lastnem soku ter ročno pripravljamo domače ajdove žgance in štruklje. Močno smo povezani z okoliškimi kmetijami in lokalnimi pridelovalci, saj se zavedamo, da se le iz najboljših domačih sestavin lahko rodi pristen, poln okus.</p>
+                    <p>Čeprav ponosno ohranjamo kmečke klasike, kot so krvavice z ajdovo kašo, kmečki krožniki in domača gibanica, naš jedilnik vedno ponuja nekaj za vsakogar. Gostom so tako na voljo tudi sočni zrezki v bogatih omakah, sveže ribe ter pestre pizze. Kramberger namreč ni le prostor za kosilo ali večerjo, temveč je prostor, kjer se ob praznovanjih zbere celotna družina, kjer se ob zvokih nazdravljanja kujejo nepozabni spomini in kjer vsak obiskovalec postane del naše zgodbe. Hvala vam, da ste že več kot tri desetletja z nami, saj vas pri nas vedno čakata dišeča domača hrana in topel nasmeh.</p>
+                </div>
+                <article>
+                    <figure>    
+                        <img src="Slike/stavba.jpg" alt="Slika restavracije Kramberger">       
+                        <figcaption>Stavba v kateri se odvija naša zgodba</figcaption>     <!--Opis slike-->
+                    </figure>
+                </article>
+            </div>
         </section>
         <section>
             <h2>Delovni čas</h2>
-            <table><caption>Delovni čas restavracije</caption>
+            <table class="tabela tabela-cas"><caption>Delovni čas restavracije</caption>
                 <thead>
                 <tr>
                     <th>Dan</th>
                     <th>Odprto</th>
                 </tr>
+                </thead> 
+                <tbody>
                 <tr>
-                    <th>Ponedeljek</th>
+                    <th scope="row">Ponedeljek</th> /*Povezava s celotno vrstico*/
                     <td>10:00 - 22:00</td>
                 </tr>
                 <tr>
-                    <th>Torek</th>
+                    <th scope="row">Torek</th>
                     <td>10:00 - 22:00</td>
                 </tr>
                 <tr>
-                    <th>Sreda</th>
+                    <th scope="row">Sreda</th>
                     <td>10:00 - 22:00</td>
                 </tr>
                 <tr>
-                    <th>Četrtek</th>
+                    <th scope="row">Četrtek</th>
                     <td>10:00 - 22:00</td>
                 </tr>
                 <tr>
-                    <th>Petek</th>
+                    <th scope="row">Petek</th>
                     <td>10:00 - 22:00</td>
                 </tr>
                 <tr>
-                    <th>Sobota</th>
+                    <th scope="row">Sobota</th>
                     <td>10:00 - 22:00</td>
                 </tr>
-                <tr>
-                    <th>Nedelja</th>
+                <tr class="zaprto">
+                    <th scope="row">Nedelja</th>
                     <td>Zaprto</td>
                 </tr>
-                </thead> 
+                </tbody>
             </table>
-            <br>
             <p>Naročila se sprejemajo do 21:00. Med prazniki je restavracija zaprta.</p>
         </section>
         <section>
             
-            <h3>Lokacija</h3>
+            <h2>Lokacija</h2>
             <p><em>
                 Restavracija Kramberger <br>
                 Glavni trg 1,<br> 
@@ -99,8 +95,8 @@
                 Slovenija
             </em></p>
             <p>Za lažjo orientacijo si lahko ogledate našo lokacijo na spodnji karti.</p>  <!--iframe doda izgled zemljevida/lokacije ki jo dobimo s tem da embedamo link preko google maps-->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2743.5192895008463!2d15.643150476676531!3d46.55719535985221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476f77a8a6e563a1%3A0xd440988ac16e5c5c!2sGlavni%20trg%201%2C%202000%20Maribor!5e0!3m2!1sen!2ssi!4v1791570248375!5m2!1sen!2ssi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Zemljevid google maps" ></iframe><br>
-            <a href="https://www.google.com/maps/place/Glavni+trg+1,+2000+Maribor/@46.5571954,15.6431505,17z/data=!3m1!4b1!4m6!3m5!1s0x476f77a8a6e563a1:0xd440988ac16e5c5c!8m2!3d46.5571917!4d15.6457254!16s%2Fg%2F11c43vmpcm?entry=ttu&g_ep=EgoyMDI2MTAwNi4wIKXMDSoASAFQAw%3D%3D">Večji prikaz zemljevida</a> 
+            <iframe class="zemljevid" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2743.5192895008463!2d15.643150476676531!3d46.55719535985221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476f77a8a6e563a1%3A0xd440988ac16e5c5c!2sGlavni%20trg%201%2C%202000%20Maribor!5e0!3m2!1sen!2ssi!4v1791570248375!5m2!1sen!2ssi" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Zemljevid google maps" ></iframe>
+            <p><a href="https://www.google.com/maps/place/Glavni+trg+1,+2000+Maribor/@46.5571954,15.6431505,17z/data=!3m1!4b1!4m6!3m5!1s0x476f77a8a6e563a1:0xd440988ac16e5c5c!8m2!3d46.5571917!4d15.6457254!16s%2Fg%2F11c43vmpcm?entry=ttu&g_ep=EgoyMDI2MTAwNi4wIKXMDSoASAFQAw%3D%3D">Večji prikaz zemljevida</a></p>
         </section>
     </main>
 
