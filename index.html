@@ -2,18 +2,21 @@
 <html lang="sl">
 <head>
     <meta charset="UTF-8">                                                      <!--Branje šumnikov-->
-    <title>Restavracija Kramberger</title>      
+    <title>Restavracija Kramberger</title>
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">     <!--Prikaz na telefonu-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">     <!--Hitrejše nalaganje Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="css/style.css">    <!--Vključitev stilske datoteke-->
 </head>
 <body>
 
-    <header>    
-        <a href="index.html">
-            <img src="Slike/logo.png" alt="Logo Restavracije Kramberger" height="150" width="200"></a>
-            <h1><a href="index.html">Restavracija Kramberger</a></h1>
+    <header>
+        <a class="logo" href="index.html">
+            <img src="Slike/logo.png" alt="Logo Restavracije Kramberger" height="150" width="225"></a>
             <nav>       <!--Navigacija (v bistvu je podobno kot unordered list)-->
                 <ul>
-                    <li><a href="index.html">Domov</a></li>
+                    <li><a href="index.html" class="aktivno" aria-current="page">Domov</a></li>
                     <li><a href="meni.html">Meni</a></li>
                     <li><a href="recepti.html">Recepti</a></li>
                     <li><a href="rezervacija.html">Rezervacija</a></li>
@@ -22,53 +25,62 @@
             </nav>
     </header>
 <main>
-    <section>   <!--Razdelitev <main>-->
-        <h2>Restavracija Kramberger - Kjer brbončice uživajo</h2>
+    <section class="hero">   <!--Uvodna sekcija s sliko v ozadju-->
+        <h1>Restavracija Kramberger - Kjer brbončice uživajo</h1>
 
         <p>
-            V Restavraciji Kramberger verjamemo, da dobra hrana združuje ljudi in ustvarja nepozabne trenutke. 
-            Z ljubeznijo do kulinarike, skrbno izbranimi sestavinami in prijetnim ambientom vam ponujamo prostor, 
-            kjer lahko uživate v odlični hrani in prijetni družbi. 
+            V Restavraciji Kramberger verjamemo, da dobra hrana združuje ljudi in ustvarja nepozabne trenutke.
+            Z ljubeznijo do kulinarike, skrbno izbranimi sestavinami in prijetnim ambientom vam ponujamo prostor,
+            kjer lahko uživate v odlični hrani in prijetni družbi.
             Naj bo to sproščeno kosilo, posebna večerja ali praznovanje pomembnih trenutkov, pri nas ste vedno dobrodošli.
         </p>
 
-       <a href="rezervacija.html">Rezervirajte mizo tukaj</a>
+       <a class="gumb" href="rezervacija.html">Rezervirajte mizo tukaj</a>
     </section>
     <section>
-        <h3>Naša zgodba</h3>
+        <h2>Naša zgodba</h2>
 
         <p>
-            <strong>Restavracija Kramberger</strong> je bila ustanovljena leta 2005 s ciljem ponujati <strong>odlično</strong> kuhinjo in izjemno storitve. 
-            Restavracija Kramberger je nastala iz želje po ustvarjanju prostora, kjer se prepletajo odlična kulinarika, prijetno vzdušje in pristno 
-            gostoljubje. Verjamemo, da restavracija ni le prostor za obedovanje, temveč kraj, kjer nastajajo lepi spomini, se srečujejo prijatelji in 
+            <strong>Restavracija Kramberger</strong> je bila ustanovljena leta 2005 s ciljem ponujati <strong>odlično</strong> kuhinjo in izjemno storitve.
+            Restavracija Kramberger je nastala iz želje po ustvarjanju prostora, kjer se prepletajo odlična kulinarika, prijetno vzdušje in pristno
+            gostoljubje. Verjamemo, da restavracija ni le prostor za obedovanje, temveč kraj, kjer nastajajo lepi spomini, se srečujejo prijatelji in
             družine ter delijo <em>posebni trenutki.</em>   <!--tag za ležeči tekst-->
             Naša ekipa se zaveda pomembnosti kvalitete in autentičnosti, zato uporabljamo le najboljše sestavine in tradicionalne recepte.
         </p>
 
     </section>
     <section>
-        <h4>Naši najljubši recepti</h4>
+        <h2>Naši najljubši recepti</h2>
 
-        <article> 
-                
-            <figure>    
-                <img src="Slike/steak.jpg" alt="Slika zrezka">       
-                <figcaption>Zrezek v omaki</figcaption>     <!--Opis slike-->
-            </figure>
-        </article>
-        <article>
-            <figure>
-                <img src="Slike/krvavica.jpg" alt="Slika krvavice s pire krompirom">
-                <figcaption>Krvavica in pire krompir.</figcaption>
-            </figure>
-        </article>
-        <article>
-            <figure>
-                <img src="Slike/svinjskap.jpg" alt="Slika svinjske pečenke s prilogami">
-                <figcaption> Hrustljava svinjska pečenka s tradicionalnimi prilogami</figcaption>
-            </figure>
-        </article>
-    </section>    
+        <div class="kartice">   <!--Kartice v mreži (tri v vrsti)-->
+            <article class="kartica">
+
+                <figure>
+                    <img src="Slike/steak.jpg" alt="Slika zrezka">
+                    <figcaption>Zrezek v omaki</figcaption>     <!--Opis slike-->
+                </figure>
+                <h3>Zrezek v omaki</h3>
+                <p>Svež zrezek v okusni omaki s sveže pobranimi domačimi jurčki.</p>
+            </article>
+            <article class="kartica">
+                <span class="znacka">Novo</span>    <!--Značka v zgornjem desnem kotu kartice-->
+                <figure>
+                    <img src="Slike/krvavica.jpg" alt="Slika krvavice s pire krompirjem">
+                    <figcaption>Krvavica in pire krompir.</figcaption>
+                </figure>
+                <h3>Krvavica in pire krompir</h3>
+                <p>Tradicionalna slovenska jed s sveže pobranimi domačimi jurčki in krompirjem.</p>
+            </article>
+            <article class="kartica">
+                <figure>
+                    <img src="Slike/svinjskap.jpg" alt="Slika svinjske pečenke s prilogami">
+                    <figcaption> Hrustljava svinjska pečenka s tradicionalnimi prilogami</figcaption>
+                </figure>
+                <h3>Svinjska pečenka</h3>
+                <p>Tradicionalna slovenska jed s prilogami, pripravljena po starem hišnem receptu.</p>
+            </article>
+        </div>
+    </section>
 </main>
 
 <footer>
