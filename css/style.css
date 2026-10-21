@@ -294,3 +294,106 @@ footer p {
     color: var(--barva-besedilo);
     background-color: var(--barva-poudarek);
 }
+/* Tabele (meni.html, o-nas.html) */
+.tabela-ovoj {
+    overflow-x: auto;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--barva-kartica);
+    box-shadow: var(--senca);
+}
+
+.tabela caption {
+    padding-bottom: 0.5rem;
+    text-align: left;
+    font-style: italic;
+    color: var(--barva-medlo);
+}
+
+.tabela th,
+.tabela td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--barva-obroba);
+    text-align: left;
+    vertical-align: top;
+}
+
+.tabela thead th {
+    color: var(--barva-svetlo);
+    background-color: var(--barva-primarna);
+}
+
+.tabela tbody tr:nth-child(even) {
+    background-color: var(--barva-vrstica);
+}
+
+.tabela tbody tr:hover {
+    background-color: var(--barva-hover);
+}
+
+/* zadnji stolpec (cene, ure) desno */
+.tabela th:last-child,
+.tabela td:last-child {
+    text-align: right;
+}
+
+.tabela-meni {
+    table-layout: fixed;        /* enake širine stolpcev v vseh tabelah */
+    min-width: 40rem;
+}
+
+.tabela-meni th:nth-child(1) {
+    width: 24%;
+}
+
+.tabela-meni th:nth-child(3) {
+    width: 24%;
+}
+
+.tabela-meni th:nth-child(4) {
+    width: 8rem;
+}
+
+.tabela-meni td:first-child {
+    font-weight: 700;
+}
+
+.tabela-meni td:nth-child(3) {
+    font-size: 0.9rem;
+    color: var(--barva-medlo);
+}
+
+.tabela-meni td:last-child {
+    font-weight: 700;
+    white-space: nowrap;
+    color: var(--barva-primarna);
+}
+
+/* o-nas.html: delovni čas */
+.tabela-cas {
+    max-width: 40rem;
+}
+
+.tabela-cas tbody th {
+    font-weight: 700;
+}
+
+.tabela tbody tr.zaprto,
+.tabela tbody tr.zaprto:hover {
+    color: var(--barva-zaprto);
+    background-color: var(--barva-zaprto-ozadje);
+    font-weight: 700;
+}
+
+.tabela tbody tr.zaprto td,
+.tabela tbody tr.zaprto th {
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.tabela tbody tr.zaprto th {
+    border-left: 4px solid var(--barva-zaprto);
+}
