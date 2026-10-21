@@ -2,21 +2,24 @@
 <html lang="sl">
 <head>
     <meta charset="UTF-8">                                                      <!--Branje šumnikov-->
-    <title>Meni | Restavracija Kramberger</title>      
+    <title>Rezervacija | Restavracija Kramberger</title>
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">     <!--Prikaz na telefonu-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">     <!--Hitrejše nalaganje Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="css/style.css">    <!--Vključitev stilske datoteke-->
 </head>
 <body>
 
-    <header>    
-        <a href="index.html">
-            <img src="Slike/logo.png" alt="Logo Restavracije Kramberger" height="150" width="200"></a>
-            <h1><a href="index.html">Restavracija Kramberger</a></h1>
+    <header>
+        <a class="logo" href="index.html">
+            <img src="Slike/logo.png" alt="Logo Restavracije Kramberger" height="150" width="225"></a>
             <nav>       <!--Navigacija (v bistvu je podobno kot unordered list)-->
                 <ul>
                     <li><a href="index.html">Domov</a></li>
                     <li><a href="meni.html">Meni</a></li>
                     <li><a href="recepti.html">Recepti</a></li>
-                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="rezervacija.html" class="aktivno" aria-current="page">Rezervacija</a></li>
                     <li><a href="o-nas.html">O nas</a></li>
                 </ul>
             </nav>
@@ -26,88 +29,104 @@
         <h1>Rezervirajte mizo</h1>
         <p>Mizo lahko rezervirate vsaj 24 ur prej. V Nedeljo je restavracija zaprta. Za vse skupine  večje od 12 nas pokličite</p>
         <!--Metoda get saj sam sebi pošilja podatke-->
-        <form action="rezervacija.html" method="get"> <!--Določi vrsto kot obrazce tu noter se pišejo samo obrazci-->
-            <fieldset>  <!--fieldset loči posamezne obrazce--> 
+        <form class="obrazec" action="rezervacija.html" method="get"> <!--Določi vrsto kot obrazce tu noter se pišejo samo obrazci-->
+            <fieldset>  <!--fieldset loči posamezne obrazce-->
                 <legend>Kontaktni podatki</legend>
-                    <p>
+                    <div class="vrstica">
                         <label for="ime_priimek">Ime in priimek:</label>                     <!--s type atributom določimo vrsto vnosa-->
-                        <input type="text" id="ime_priimek" name="ime_priimek" required>    <!--ID določa neke vrste EMŠO podatku(id določimo vsakemu drugačnega)-->
-                    </p>                                                                    <!--name je "predal" v katerega se bo shranil podatek(ta name določimo več atributov istega)--> 
-                    <p>
-                        <label for="email">Elektronska pošta:</label>                     <!--s type atributom določimo vrsto vnosa-->
-                        <input type="email" id="email" name="email" required>    <!--ID določa neke vrste EMŠO podatku(id določimo vsakemu drugačnega)-->
-                    </p>
-                    <p>
-                        <label for="telefon">Telefonska številka:</label>                     <!--s type atributom določimo vrsto vnosa-->
-                        <input type="tel" id="telefon" name="telefon" required>    <!--ID določa neke vrste EMŠO podatku(id določimo vsakemu drugačnega)-->
-                    </p>
+                        <input class="polje" type="text" id="ime_priimek" name="ime_priimek" required>    <!--ID določa neke vrste EMŠO podatku(id določimo vsakemu drugačnega)-->
+                    </div>                                                                  <!--name je "predal" v katerega se bo shranil podatek(ta name določimo več atributov istega)-->
+                    <div class="vrstica">
+                        <label for="email">Elektronska pošta:</label>
+                        <input class="polje" type="email" id="email" name="email" required>
+                    </div>
+                    <div class="vrstica">
+                        <label for="telefon">Telefonska številka:</label>
+                        <input class="polje" type="tel" id="telefon" name="telefon" required>
+                    </div>
             </fieldset>
-            <fieldset>  <!--fieldset loči posamezne obrazce--> 
+            <fieldset>  <!--fieldset loči posamezne obrazce-->
                 <legend>Podrobnosti rezervacije</legend>
-                    <p>
-                        <label for="datum">Datum:</label>                     <!--s type atributom določimo vrsto vnosa-->
-                        <input type="date" id="datum" name="datum" required>    <!--ID določa neke vrste EMŠO podatku(id določimo vsakemu drugačnega)-->
-                    </p>                                                                    <!--name je "predal" v katerega se bo shranil podatek(ta name določimo več atributov istega)--> 
-                    <p>
-                        <label for="ura">Ura:</label>                     <!--s type atributom določimo vrsto vnosa-->
-                        <input type="time" id="ura" name="ura" min="10:00" max="22:00" required>    <!--ID določa neke vrste EMŠO podatku(id določimo vsakemu drugačnega)-->
-                    </p>
-                    <p>
-                        <label for="stoseb">Število oseb:</label>                     <!--s type atributom določimo vrsto vnosa-->
-                        <input type="number" id="stoseb" name="stoseb" min="1" max="12" required>    <!--ID določa neke vrste EMŠO podatku(id določimo vsakemu drugačnega)-->
-                    </p>
-                    <p>
+                    <div class="vrstica">
+                        <label for="datum">Datum:</label>
+                        <input class="polje" type="date" id="datum" name="datum" required>
+                    </div>
+                    <div class="vrstica">
+                        <label for="ura">Ura:</label>
+                        <input class="polje" type="time" id="ura" name="ura" min="10:00" max="22:00" required>
+                    </div>
+                    <div class="vrstica">
+                        <label for="stoseb">Število oseb:</label>
+                        <input class="polje" type="number" id="stoseb" name="stoseb" min="1" max="12" required>
+                    </div>
+                    <div class="vrstica">
                         <label for="prostor">Prostor:</label>
-                        <select id="prostor" name="prostor">    <!--Dropdown meni-->
-                            <option value="notranjost">Notranjost:</option>     <!--Opcije v dropdown meniju-->
-                            <option value="terasa">Terasa:</option>
-                            <option value="zsoba">Zasebna soba:</option>
+                        <select class="polje" id="prostor" name="prostor">    <!--Dropdown meni-->
+                            <option value="notranjost">Notranjost</option>     <!--Opcije v dropdown meniju-->
+                            <option value="terasa">Terasa</option>
+                            <option value="zsoba">Zasebna soba</option>
                         </select>
-                    </p>
-                    <p>
-                        <label>Priložnost:</label><br>
-                        <input type="radio" id="brezp" name="priloznost" value="brez" checked>  <!--checked vnaprej izbere ta obrazec-->
-                        <label for="brezp">Brez</label><br>
-
-                        <input type="radio" id="rojstnidanp" name="priloznost" value="rojstnidan">  
-                        <label for="rojstnidanp">Rojstni dan</label><br>
-
-                        <input type="radio" id="obletnicap" name="priloznost" value="obletnica">  
-                        <label for="obletnicap">Obletnica</label><br>
-
-                        <input type="radio" id="srecanjep" name="priloznost" value="poslovnosrecanje">  
-                        <label for="srecanjep">Poslovno srečanje</label><br>
-                    </p>
+                    </div>
+                    <div class="vrstica">
+                        <span class="oznaka" id="oznaka-priloznost">Priložnost:</span>
+                        <div class="moznosti" role="radiogroup" aria-labelledby="oznaka-priloznost">
+                            <span class="moznost">
+                                <input type="radio" id="brezp" name="priloznost" value="brez" checked>  <!--checked vnaprej izbere ta obrazec-->
+                                <label for="brezp">Brez</label>
+                            </span>
+                            <span class="moznost">
+                                <input type="radio" id="rojstnidanp" name="priloznost" value="rojstnidan">
+                                <label for="rojstnidanp">Rojstni dan</label>
+                            </span>
+                            <span class="moznost">
+                                <input type="radio" id="obletnicap" name="priloznost" value="obletnica">
+                                <label for="obletnicap">Obletnica</label>
+                            </span>
+                            <span class="moznost">
+                                <input type="radio" id="srecanjep" name="priloznost" value="poslovnosrecanje">
+                                <label for="srecanjep">Poslovno srečanje</label>
+                            </span>
+                        </div>
+                    </div>
             </fieldset>
-            <fieldset>  <!--fieldset loči posamezne obrazce--> 
+            <fieldset>  <!--fieldset loči posamezne obrazce-->
                 <legend>Dodatne želje</legend>
-                    <p>
-                        <label>Prehranske omejitve</label>
-                        <input type="checkbox" id="vegetarjanskoo" name="omejitve" value="vegetarjan">
-                        <label for="vegetarjanskoo">Vegetarjansko</label>    
-                                                                                                 
-                        <input type="checkbox" id="veganskoo" name="omejitve" value="vegan">
-                        <label for="veganskoo">Vegansko</label>      
-                    
-                        <input type="checkbox" id="brezglutenao" name="omejitve" value="brezglutena">
-                        <label for="brezglutenao">Brez glutena</label>   
-
-                        <input type="checkbox" id="brezlaktozeo" name="omejitve" value="brezlaktoze">
-                        <label for="brezlaktozeo">Brez laktoze</label>       
-                    </p>
-                    <p>
+                    <div class="vrstica">
+                        <span class="oznaka" id="oznaka-omejitve">Prehranske omejitve</span>
+                        <div class="moznosti" role="group" aria-labelledby="oznaka-omejitve">
+                            <span class="moznost">
+                                <input type="checkbox" id="vegetarjanskoo" name="omejitve" value="vegetarjan">
+                                <label for="vegetarjanskoo">Vegetarjansko</label>
+                            </span>
+                            <span class="moznost">
+                                <input type="checkbox" id="veganskoo" name="omejitve" value="vegan">
+                                <label for="veganskoo">Vegansko</label>
+                            </span>
+                            <span class="moznost">
+                                <input type="checkbox" id="brezglutenao" name="omejitve" value="brezglutena">
+                                <label for="brezglutenao">Brez glutena</label>
+                            </span>
+                            <span class="moznost">
+                                <input type="checkbox" id="brezlaktozeo" name="omejitve" value="brezlaktoze">
+                                <label for="brezlaktozeo">Brez laktoze</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="vrstica">
                         <label for="opombe">Opombe:</label>
-                        <textarea id="opombe" name="opombe" cols="50" rows="5"></textarea> <!--cols je limit znakov rows je limit vrst-->
-                    </p>
-                    <p>
-                        <input type="checkbox" id="soglasje" name="soglasje" required>
-                        <label for="soglasje">Strinjam se z obdelavo vseh mojih podatkov</label>
-                    </p>
-                    <p>
-                        <button type="submit">Pošlji rezervacijo</button>
-                        <button type="reset">Razveljavi</button>
-                    </p>
+                        <textarea class="polje" id="opombe" name="opombe" cols="50" rows="5"></textarea> <!--cols je limit znakov rows je limit vrst-->
+                    </div>
+                    <div class="vrstica">
+                        <span class="moznost soglasje">
+                            <input type="checkbox" id="soglasje" name="soglasje" required>
+                            <label for="soglasje">Strinjam se z obdelavo vseh mojih podatkov</label>
+                        </span>
+                    </div>
             </fieldset>
+            <div class="gumbi">
+                <button class="gumb" type="submit">Pošlji rezervacijo</button>
+                <button class="gumb gumb-sekundarni" type="reset">Razveljavi</button>
+            </div>
         </form>
     </main>
 
