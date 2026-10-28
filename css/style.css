@@ -1,4 +1,3 @@
-
 /* Barve */
 :root {
     
@@ -26,6 +25,7 @@
     /* sence */
     --senca: 0 2px 10px rgba(46, 36, 32, 0.18);
     --senca-besedila: 0 2px 6px rgba(0, 0, 0, 0.7);
+    --senca-izrazita: 0 14px 30px rgba(46, 36, 32, 0.3);    /* senca kartice ob prehodu miške */
 
     /* pisave in mere */
     --pisava-naslovi: "Playfair Display", Georgia, serif;
@@ -96,8 +96,14 @@ header {
     height: 4.5rem;
 }
 
+header nav {
+    flex: 1 1 0;        /* navigacija zapolni preostanek vrstice, povezave se po potrebi prelomijo v več vrst */
+    min-width: 0;
+}
+
 header nav ul {
     display: flex;
+    justify-content: flex-end;     /* povezave desno */
     flex-wrap: wrap;
     gap: 0.25rem;
     margin: 0;
@@ -112,7 +118,7 @@ header nav a {
     font-weight: 600;
     text-decoration: none;
     color: var(--barva-besedilo);
-    transition: background-color 0.2s;
+    transition: background-color 0.3s ease, color 0.3s ease;     /* postopen prehod barve ob prehodu miške */
 }
 
 header nav a:hover {
@@ -139,7 +145,7 @@ header nav a.aktivno:hover {
     color: var(--barva-svetlo);
     background-color: var(--barva-primarna);
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;    /* postopen prehod barve ob prehodu miške */
 }
 
 .gumb:hover {
@@ -215,6 +221,7 @@ footer p {
     color: var(--barva-svetlo);
     font-size: 2.75rem;
     text-shadow: var(--senca-besedila);
+    animation: pojavi-od-spodaj 1s ease-out both;   /* ob nalaganju se postopoma prikaže in pripotuje od spodaj */
 }
 
 .hero p {
@@ -249,6 +256,12 @@ footer p {
     border-radius: var(--polmer);
     background-color: var(--barva-kartica);
     box-shadow: var(--senca);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kartica:hover {
+    transform: translateY(-0.5rem);     /* kartica se rahlo dvigne */
+    box-shadow: var(--senca-izrazita);
 }
 
 .kartica figure {
@@ -399,6 +412,7 @@ footer p {
 }
 /* rezervacija.html */
 .obrazec fieldset {
+    min-width: 0;       /* fieldset sicer ne more biti ožji od vsebine in povzroči vodoravno drsenje */
     margin: 2rem 0 1.5rem;
     padding: 1.5rem;
     border: 1px solid var(--barva-obroba);
@@ -619,4 +633,202 @@ textarea.polje {
     border: 0;
     border-radius: var(--polmer);
     box-shadow: var(--senca);
+}
+
+/* Prilagoditev za različne velikosti zaslona */
+
+/* Osnovna postavitev vsebine: omejena širina in odmik od robov */
+main {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+    overflow-wrap: break-word;      /* dolga beseda v naslovu ne razširi strani */
+}
+
+/* Ikone (Font Awesome) */
+.ikona {
+    margin-right: 0.5rem;           /* razmik med ikono in besedilom */
+}
+
+main h1 .ikona {
+    color: var(--barva-poudarek);
+}
+
+footer a {
+    transition: color 0.3s ease;    /* postopen prehod barve povezav v nogi */
+}
+
+/* Gumb hamburger (viden samo na telefonu) */
+.meni-gumb {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 2px solid var(--barva-primarna);
+    border-radius: var(--polmer);
+    font-size: 1.25rem;
+    color: var(--barva-primarna);
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.meni-gumb:hover,
+.meni-gumb[aria-expanded="true"] {
+    color: var(--barva-svetlo);
+    background-color: var(--barva-primarna);
+}
+
+/* Animacija naslova v uvodni sekciji: ob nalaganju se postopoma prikaže in pripotuje od spodaj navzgor */
+@keyframes pojavi-od-spodaj {
+    from {
+        opacity: 0;
+        transform: translateY(2.5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablica: 600px do 1000px (računalnik, več kot 1000px, uporablja osnovne stile zgoraj) */
+@media (min-width: 600px) and (max-width: 1000px) {
+    header nav a {
+        padding: 0.5rem 0.75rem;        /* manjši odmiki, da gre v vrsto več povezav; ostale se prelomijo */
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .kartice {
+        grid-template-columns: repeat(2, minmax(0, 1fr));   /* dve kartici v vrsti */
+    }
+}
+
+/* Telefon: manj kot 600px */
+@media (max-width: 599px) {
+    /* glava: logotip in gumb hamburger v isti vrsti, odprta navigacija pod njima */
+    header {
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .meni-gumb {
+        display: inline-flex;
+    }
+
+    header nav {
+        display: none;                  /* navigacija je privzeto skrita */
+        flex: 0 0 100%;                 /* odprta navigacija zasede celotno vrstico pod logotipom */
+    }
+
+    header nav.odprto {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;         /* povezave ena pod drugo */
+        flex-wrap: nowrap;
+        padding-bottom: 0.5rem;
+    }
+
+    header nav a {
+        padding: 0.75rem 1rem;
+        border-radius: var(--polmer);
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    /* index.html */
+    .hero {
+        min-height: 50vh;
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero p {
+        font-size: 1.05rem;
+    }
+
+    .kartice {
+        grid-template-columns: minmax(0, 1fr);      /* ena kartica v vrsti */
+    }
+
+    /* rezervacija.html: oznake nad polji, polja čez celotno širino */
+    .obrazec fieldset {
+        padding: 1rem;
+    }
+
+    .vrstica {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.35rem;
+    }
+
+    .polje {
+        max-width: none;
+    }
+
+    .soglasje {
+        grid-column: 1;
+    }
+
+    .gumbi {
+        flex-direction: column;
+    }
+
+    .gumbi .gumb {
+        width: 100%;
+    }
+
+    /* recepti.html in o-nas.html: slika in besedilo ena pod drugo */
+    .recept {
+        padding: 1rem;
+    }
+
+    .recept-vrh,
+    .zgodba {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+    }
+
+    .zemljevid {
+        height: 300px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.25rem 1rem;
+    }
+}
+
+/* Uporabniki, ki so v sistemu izklopili animacije */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
