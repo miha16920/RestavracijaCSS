@@ -7,26 +7,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">     <!--Hitrejše nalaganje Google Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">    <!--Knjižnica ikon Font Awesome-->
     <link rel="stylesheet" href="css/style.css">    <!--Vključitev stilske datoteke-->
+    <script src="js/meni.js" defer></script>    <!--Skripta za odpiranje in zapiranje hamburger menija-->
 </head>
 <body>
 
-    <header>    
+    <header>
         <a class="logo" href="index.html">
             <img src="Slike/logo.png" alt="Logo Restavracije Kramberger" height="150" width="225"></a>
-            <nav>       <!--Navigacija (v bistvu je podobno kot unordered list)-->
-                <ul>
-                    <li><a href="index.html">Domov</a></li>
-                    <li><a href="meni.html">Meni</a></li>
-                    <li><a href="recepti.html">Recepti</a></li>
-                    <li><a href="rezervacija.html">Rezervacija</a></li>
-                    <li><a href="o-nas.html" class="aktivno" aria-current="page">O nas</a></li>
-                </ul>
-            </nav>
+        <button class="meni-gumb" type="button" aria-expanded="false" aria-controls="glavna-navigacija" aria-label="Odpri meni">    <!--Gumb hamburger meni (viden samo na telefonu)-->
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+        <nav id="glavna-navigacija">       <!--Navigacija (v bistvu je podobno kot unordered list)-->
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house fa-fw ikona" aria-hidden="true"></i>Domov</a></li>
+                <li><a href="meni.html"><i class="fa-solid fa-utensils fa-fw ikona" aria-hidden="true"></i>Meni</a></li>
+                <li><a href="recepti.html"><i class="fa-solid fa-book-open fa-fw ikona" aria-hidden="true"></i>Recepti</a></li>
+                <li><a href="rezervacija.html"><i class="fa-solid fa-calendar-check fa-fw ikona" aria-hidden="true"></i>Rezervacija</a></li>
+                <li><a href="o-nas.html" class="aktivno" aria-current="page"><i class="fa-solid fa-circle-info fa-fw ikona" aria-hidden="true"></i>O nas</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <h1>O nas</h1>
+        <h1><i class="fa-solid fa-circle-info ikona" aria-hidden="true"></i>O nas</h1>
         <section> 
             <h2>Naša zgodba</h2>
             <div class="zgodba">    <!--Zgodba in slika drugo ob drugi-->
@@ -54,7 +59,7 @@
                 </thead> 
                 <tbody>
                 <tr>
-                    <th scope="row">Ponedeljek</th> /*Povezava s celotno vrstico*/
+                    <th scope="row">Ponedeljek</th> <!--Povezava s celotno vrstico-->
                     <td>10:00 - 22:00</td>
                 </tr>
                 <tr>
@@ -102,13 +107,13 @@
 
     <footer>
     <address>       <!--Kontaktni podatki v nogi-->
-        Restavracija Kramberger <br>
-        Glavni trg 1,2000 Maribor <br>
-        <a href="tel:+38612345678"> 07 567 859</a> <br>     <!--tel:+38612345678 omogoči klic prek telefona-->
-        <a href="mailto:info@restavracija-kramberger.si">info@restavracija-kramberger.si</a>    <!--mailto:info@restavracija-kramberger.si omogoči pošiljanje e-pošte-->
+        <i class="fa-solid fa-utensils fa-fw ikona" aria-hidden="true"></i>Restavracija Kramberger <br>
+        <i class="fa-solid fa-location-dot fa-fw ikona" aria-hidden="true"></i>Glavni trg 1,2000 Maribor <br>
+        <a href="tel:+38612345678"><i class="fa-solid fa-phone fa-fw ikona" aria-hidden="true"></i>07 567 859</a> <br>     <!--tel:+38612345678 omogoči klic prek telefona-->
+        <a href="mailto:info@restavracija-kramberger.si"><i class="fa-solid fa-envelope fa-fw ikona" aria-hidden="true"></i>info@restavracija-kramberger.si</a>    <!--mailto:info@restavracija-kramberger.si omogoči pošiljanje e-pošte-->
     </address>
     <p>&copy; 2026 Miha Kramberger. Vse pravice pridržane.</p>      <!--&copy; znak za @-->
 </footer>
 
 </body>
-</html>    
+</html>
